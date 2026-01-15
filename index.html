@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Pendu — Moderne</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>🪢 Pendu</h1>
+      <p class="sub">Clavier • Catégories • Difficulté • SVG</p>
+    </header>
+
+    <section class="hud">
+      <div class="pill">❤️ Erreurs : <span id="err">0</span>/<span id="maxErr">6</span></div>
+      <div class="pill">
+        Catégorie :
+        <select id="cat">
+          <option value="dev">Dev</option>
+          <option value="sport">Sport</option>
+          <option value="food">Food</option>
+        </select>
+      </div>
+      <div class="pill">
+        Niveau :
+        <select id="lvl">
+          <option value="6">Normal</option>
+          <option value="4">Difficile</option>
+          <option value="8">Facile</option>
+        </select>
+      </div>
+      <button id="new" class="btn">🔄 Nouveau</button>
+    </section>
+
+    <section class="stage">
+      <svg viewBox="0 0 220 200" class="svg">
+        <line x1="20" y1="180" x2="180" y2="180" />
+        <line x1="60" y1="180" x2="60" y2="20" />
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="40" />
+        <!-- Parts -->
+        <circle id="p1" cx="140" cy="55" r="15" class="part"/>
+        <line id="p2" x1="140" y1="70" x2="140" y2="115" class="part"/>
+        <line id="p3" x1="140" y1="85" x2="120" y2="105" class="part"/>
+        <line id="p4" x1="140" y1="85" x2="160" y2="105" class="part"/>
+        <line id="p5" x1="140" y1="115" x2="125" y2="145" class="part"/>
+        <line id="p6" x1="140" y1="115" x2="155" y2="145" class="part"/>
+      </svg>
+
+      <div class="word" id="word"></div>
+      <div class="letters">
+        <div class="pill small">✅ Bonnes : <span id="good">—</span></div>
+        <div class="pill small">❌ Ratées : <span id="bad">—</span></div>
+      </div>
+    </section>
+
+    <section class="kb" id="kb"></section>
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
